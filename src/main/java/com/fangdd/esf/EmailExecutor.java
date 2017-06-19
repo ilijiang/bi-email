@@ -5,7 +5,6 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
-import org.apache.commons.lang3.*;
 import org.apache.log4j.Logger;
 
 /**
@@ -25,6 +24,7 @@ public class EmailExecutor implements Callable<TaskStatus> {
         this.jobTime = jobTime;
     }
 
+    @Override
     public TaskStatus call() throws Exception {
         TaskStatus ts = new TaskStatus();
         try {
@@ -35,13 +35,11 @@ public class EmailExecutor implements Callable<TaskStatus> {
             String excelDestUrl = MessageFormat.format(item.getFinereportCptNameUrl(), jobTime);
             String imageDestUrl = MessageFormat.format(item.getFinereportContentUrl(), jobTime);
 
-//            String imageGetWebUrl = "." + File.separator + item.getAttachName() + "_" + jobTime + ".png";
 
 
             logger.info("excelDestUrl : " + excelDestUrl);
             logger.info("imageDestUrl : " + imageDestUrl);
             logger.info("fileName : " + fileName);
-//            logger.info("imageGetWebUrl : " + imageGetWebUrl);
             logger.info(item.toString());
 
             //下载文件
