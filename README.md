@@ -29,7 +29,7 @@
     * 发送类型："预发"、"正式"
     * 发送日期："yyyy-MM-dd"
 
-* step3 cordinator
+* step3 cordinator参数设置
     * 预发时间：07:30
     * 正式时间：09:00
     * dt = ${coord:formatTime(coord:dateOffset(coord:nominalTime(),-1,'DAY'), 'yyyyMMdd')}
